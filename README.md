@@ -35,11 +35,18 @@ Na raiz do projeto (onde está o `pom.xml`):
 mvn spring-boot:run
 ```
 
-Isso baixa as dependências, compila e sobe a aplicação. A API fica disponível em:
+Isso baixa as dependências, compila e sobe a aplicação em `http://localhost:8080/RestAPIFurb`.
 
-```
-http://localhost:8080/RestAPIFurb
-```
+> Abrir só essa URL base no navegador redireciona automaticamente para o Swagger — não é um endpoint em si, é só o prefixo de todas as rotas abaixo.
+
+### Links úteis (com a aplicação rodando)
+
+| O que é | Link |
+|---|---|
+| Documentação Swagger (testa tudo por aqui) | http://localhost:8080/RestAPIFurb/swagger-ui.html |
+| Lista de equipamentos | http://localhost:8080/RestAPIFurb/equipamentos |
+| Console do banco H2 | http://localhost:8080/RestAPIFurb/h2-console |
+| Login (gera o token JWT) | `POST` http://localhost:8080/RestAPIFurb/auth/login |
 
 ## Endpoints
 
