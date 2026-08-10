@@ -100,6 +100,10 @@ Use o token nas rotas protegidas:
 Authorization: Bearer <token>
 ```
 
+> ⚠️ `/auth/login` só aceita **POST**. Colar essa URL direto no navegador faz uma requisição GET e retorna erro (405 - Method Not Allowed) — isso é esperado, não é bug. Pra testar, use o botão "Try it out" no Swagger (ou um POST via curl/Postman/Insomnia).
+
+No Swagger: depois de rodar o login e copiar o `token` da resposta, clique no botão **Authorize** (cadeado no canto superior direito) e cole só o token (sem escrever "Bearer" antes — o Swagger já adiciona isso sozinho). A partir daí os botões "Try it out" de POST/PUT/DELETE em `/equipamentos` passam a funcionar.
+
 ## Documentação Swagger
 
 ```
@@ -121,6 +125,8 @@ JDBC URL: jdbc:h2:mem:resapifurb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
 Usuário:  sa
 Senha:    (em branco)
 ```
+
+> ⚠️ O formulário do H2 Console abre com valores de exemplo (JDBC URL `jdbc:h2:~/test`, usuário `admin`) que **não são os do projeto**. Se clicar em Conectar sem trocar, dá erro "Database not found". Sempre sobrescreva os três campos acima antes de conectar.
 
 ## Estrutura do projeto
 
